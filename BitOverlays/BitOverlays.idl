@@ -1,0 +1,54 @@
+﻿// BitOverlays.idl: BitOverlays 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 生成类型库(BitOverlays.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(c2f1dc70-fb7c-4bea-a725-0fb1221b024f),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IBitShellExt32 : IDispatch
+{
+};
+[
+	object,
+	uuid(e7e4b2d5-d9d5-45df-9cfb-07006abb91e0),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IBitShellExt64 : IDispatch
+{
+};
+[
+	uuid(59858dfb-6a7a-422b-af21-adbb360aa5c5),
+	version(1.0),
+]
+library BitOverlaysLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(e589e9cf-ece8-41e5-a51a-6c6763cf0ca2)
+	]
+	coclass BitShellExt32
+	{
+		[default] interface IBitShellExt32;
+	};
+	[
+		uuid(dea80467-dda1-4f28-ac5d-1a725793daa3)
+	]
+	coclass BitShellExt64
+	{
+		[default] interface IBitShellExt64;
+	};
+};
+
+import "shobjidl.idl";
+import "shobjidl.idl";

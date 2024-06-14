@@ -1,0 +1,9 @@
+﻿**/.vs*
+**/x64
+**/Debug
+**/Release
+**/*.suo
+**/*.aps
+*.user
+*.sdf
+*.ipch

@@ -1,0 +1,39 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {e589e9cf-ece8-41e5-a51a-6c6763cf0ca2} = s 'BitShellExt32 class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{59858dfb-6a7a-422b-af21-adbb360aa5c5}'
+			Version = s '1.0'
+		}
+	}
+}
+
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Microsoft
+		{
+			NoRemove Windows
+			{
+				NoRemove CurrentVersion
+				{
+					NoRemove Explorer
+					{
+						NoRemove ShellIconOverlayIdentifiers
+						{
+							ForceRemove '      BitOverlays32' = s '{e589e9cf-ece8-41e5-a51a-6c6763cf0ca2}'
+						}
+					}
+				}
+			}
+		}
+	}
+}
